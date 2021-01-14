@@ -1,0 +1,15 @@
+include ../includes/head
+.d-flex.justify-content-center.align-items-center.h-100vh
+    .card.p-5(style="min-width:390px")
+        .d-flex.justify-content-between.align-items-end.mb-5
+            img(src="img/Logo.svg")
+            h2.gray-color-text(style="margin-bottom: 0;line-height:0.7") Вход
+        form
+            .form-group
+                input.form-control.invalid(type="text", id="username", placeholder="Username")
+                small.invalid Input incorrect
+            .form-group
+                input.form-control.valid(type="password", id="password", placeholder="Password")
+                small.valid Input correct
+            button.btn.btn-primary.btn-block.d-flex.justify-content-center.align-items-center.position-relative(type="submit") Войти
+                img.mr-2.small-loader.position-absolute(src="img/spinner.svg", style="right:0")

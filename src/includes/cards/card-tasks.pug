@@ -1,0 +1,13 @@
+include ../tasks/temp-variables
+
+.row.mb-4
+    .col-lg-12.col-md-12.col-12
+        .card.px-3.py-3
+            h2.pb-3
+                a(href='#') Задачи
+            .row
+                each task in tasks
+                    a(href='#').col-lg-4.col-md-6.col-12
+                        .d-flex.align-items-center.mb-4
+                            img(src="img/tasks/icon-task-"+task.class+".png")
+                            p.ml-3.mb-0(class=task.class+'-task')=task.description

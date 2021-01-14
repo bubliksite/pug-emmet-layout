@@ -1,0 +1,12 @@
+include ../end-acts/temp-variables
+    .col-lg-4.col-md-6.col-12
+        .card.h-100.px-3.py-3
+            h2.pb-3
+                a(href='#') Акты сдачи
+            each endact in endacts
+                a(href='#').d-flex.align-items-center.my-2
+                    .d-flex.align-items-center
+                        img(src="img/endacts/" + endact.icon + ".png")
+                        .ml-3
+                            p.font-weight-bold.text-uppercase.m-0(style="text-transform:unset")=endact.name
+                            p.m-0.text-muted.small=endact.counter + '/250'

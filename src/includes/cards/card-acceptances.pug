@@ -1,0 +1,16 @@
+include ../acceptances/temp-variables
+    .col-lg-4.col-md-6.col-12
+        .card.h-100.px-3.py-3
+            h2.pb-3
+                a(href='#') Выполнение
+                .row
+                    each acceptance in acceptances
+                        a(href='#').col-6.mt-3
+                            .d-flex.align-items-center.position-relative
+                                svg(style='width:48px;height:48px;transform:rotate(-90deg)')
+                                    circle(r="20", cy="50%", cx="50%", fill="transparent" stroke-width="8" stroke="#172f5f")
+                                    circle(r="20", cy="50%", cx="50%", fill="transparent" stroke-width="8" stroke="#4BBBCE", stroke-dasharray=(125.6 * acceptance.counter / acceptance.total) +", " + (125.6 * (acceptance.total - acceptance.counter) / acceptance.total), stroke-dashoffset="0")
+                                p(style="width:48px;font-size:65%;").small.m-0.position-absolute.text-center.font-weight-bold=acceptance.counter + '/' + acceptance.total
+                                .ml-3
+                                    p.font-weight-bold.m-0(style="text-transform:unset")=acceptance.month
+                                    p(style="font-size:70%;").m-0.text-muted.small=acceptance.summary

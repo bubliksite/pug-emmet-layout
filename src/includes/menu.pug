@@ -1,0 +1,8 @@
+-const menu = [{title: 'Домой', img: 'img/icon-menu-home', active: true}, {title: 'Выполнение', img: 'img/icon-menu-acceptance'}, {title: 'Договоры', img: 'img/icon-menu-contract'}, {title: 'Акты сдачи', img: 'img/icon-menu-end-act'}, {title: 'Подрядчики', img: 'img/icon-menu-contractor'}, {title: 'Объекты', img: 'img/icon-menu-object'}, {title: 'Задачи', img: 'img/icon-menu-task'}, ]
+
+section.bg-medium
+    .menu.container.py-3
+            each item in menu
+                a.d-flex.align-items-center.p-2(href="#", class=(item.active ? 'active' : ''))
+                    img.mr-2(src=item.img + '.svg')
+                    p.m-0=item.title

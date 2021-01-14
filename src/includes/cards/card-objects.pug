@@ -1,0 +1,17 @@
+include ../objects/temp-variables
+    .col-lg-4.col-md-6.col-12
+        .card.h-100.px-3.py-3
+            h2.pb-3
+                a(href='#') Объекты
+            each object in objects
+                a(href='#').d-flex.align-items-center.justify-content-between.my-2
+                    .d-flex.align-items-center.position-relative
+                        svg(style='width:48px;height:48px;transform:rotate(-90deg)')
+                            circle(r="20", cy="50%", cx="50%", fill="transparent" stroke-width="8" stroke="#172f5f")
+                            circle(r="20", cy="50%", cx="50%", fill="transparent" stroke-width="8" stroke="#4BBBCE", stroke-dasharray=(125.6 * object.progress / 100) +", " + (125.6 * (100 - object.progress) / 100), stroke-dashoffset="0")
+                        p(style="width:48px;font-size:70%;").small.m-0.position-absolute.text-center.font-weight-bold=object.progress + '%'
+                        .ml-3
+                            p.font-weight-bold.m-0(style="text-transform:unset")=object.number
+                            p.m-0.text-muted.small=object.counter
+                    .d-flex.align-items-center.justify-content-end
+                        p.m-0.text-muted.small= 'от' + object.date

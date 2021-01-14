@@ -1,0 +1,25 @@
+include ../contracts/temp-variables
+    .col-lg-8.col-md-6.col-12
+        .card.h-100.px-3.py-3
+            h2.pb-3
+                a(href='#') Договоры
+            table.table.text-white.table-responsive.small
+                thead
+                    tr
+                        th(scope="col") Ключ
+                        th(scope="col") Номер договора
+                        th(scope="col") Подрядчик
+                        th(scope="col") Дата
+                        th(scope="col") Прогресс
+                tbody
+                    each contract in contracts
+                        tr
+                            th(scope="row")
+                                a(href='#')=contract.key
+                            td
+                                a(href='#')=contract.number
+                            td=contract.contractor
+                            td=contract.date
+                            td(style="vertical-align:middle")
+                                a(href='#').progress
+                                    .progress-bar(role="progressbar" class='bg-' + contract.class, style='width:' + contract.progress + '%' aria-valuenow=contract.progress + '%' aria-valuemin="0" aria-valuemax="100")

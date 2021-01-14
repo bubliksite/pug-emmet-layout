@@ -1,0 +1,29 @@
+{
+  "name": "emmet-layout",
+  "version": "0.0.1",
+  "description": "Layouts for emmet",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm-run-all build:*",
+    "build:clean": "rimraf build/",
+    "build:sass": "node-sass src/sass/index.scss -o build/css/",
+    "build:pug": "pug src/pug/ -o build/",
+    "build:ugly": "npm run build:sass && uglifycss build/css/index.css > build/css/index.min.css",
+    "build:copy": "cpx src/img/** build/img && cpx src/js/** build/js",
+    "watch": "npm-run-all --parallel watch:*",
+    "watch:sass": "npm run build:sass -- -w",
+    "watch:pug": "npm run build:pug -- -w",
+    "watch:copy": "npm run build:copy -- -w"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cpx": "^1.5.0",
+    "node-sass": "^5.0.0",
+    "npm-run-all": "^4.1.5",
+    "pug": "^3.0.0",
+    "rimraf": "^3.0.2",
+    "sass": "^1.29.0",
+    "uglifycss": "0.0.29"
+  }
+}
